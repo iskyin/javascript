@@ -48,6 +48,8 @@ console.log(stackArr.unshift(6))
 console.log(stackArr);
 
 
+console.log('↓↓↓↓↓↓↓↓↓↓↓ 数组 排序方法 ↓↓↓↓↓↓↓↓↓↓↓')
+
 // 排序
 var pxArr=[6,3,2,1,6,5,10,9,8,11,1]
 //   1. sort(): 升序排列数组项,返回经过排序后的数组 (比较的是字符串)
@@ -55,9 +57,49 @@ console.log(pxArr.sort());
 //   2. reverse(): 反转数组项的顺序，返回经过排序后的数组 (比较的是字符串)
 console.log(pxArr.reverse());
 
+/**
+ * 比较函数接收两个参数，
+ *  如果第一个参数应该位于第二个之前则返回一个负数
+ *  如果连个参数相等则返回0
+ *  如果第一个参数应该位于第二个之后则返回一个正值
+**/
+var compare=function(v1,v2){
+  if(v1<v2){
+    return -1;
+  }else if(v1>v2){
+    return 1;
+  }else {
+    return 0;
+  }
+}
+
+console.log(pxArr.sort(compare));
+console.log(pxArr.reverse(compare));
 
 
 
+console.log('↓↓↓↓↓↓↓↓↓↓↓ 数组 操作方法 ↓↓↓↓↓↓↓↓↓↓↓')
+var copyArr=[1,'2','ab',88];
+
+// concat 基于当前数组中的所有项创建一个 新数组
+//  参数不传 -> 返回数组副本
+//  参数是一个或多个数组 -> 将数组追加到数组后
+var ctArr=copyArr.concat();
+
+// slice 基于当前数组中的一或多个项目创建一个 新数组
+//  参数不传 -> 返回数组副本
+// 一个或两个参数 -> 开始和结束位置
+var ctArr=copyArr.slice();
+
+
+// splice()
+//  2个参数 -> 删除任意数量的项 （起始位置，要删除的项）
+//  3个参数 -> 向指定位置插入任意数量的项 （起始位置，要删除的项，要插入的项目）
+//  4个参数 -> 向指定位置插入任意数量的项，同时删除任意数量的项
+var ctArr=copyArr.slice();
+
+
+console.log('↓↓↓↓↓↓↓↓↓↓↓ 数组 位置方法 ↓↓↓↓↓↓↓↓↓↓↓')
 
 
 
